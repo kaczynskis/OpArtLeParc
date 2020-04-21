@@ -3,7 +3,6 @@ from tkinter import *
 penSize = 5
 
 class Draw(object):
-    penColor = 'black'
 
     def __init__(self):
         self.root = Tk()
@@ -16,12 +15,10 @@ class Draw(object):
         self.oldX = None
         self.oldY = None
         self.lineWidth = penSize
-        self.lineColor = 'black'
         self.c.bind('<B1-Motion>', self.draw)
 
     def draw(self, event):
         self.lineWidth = 5
-	self.lineColor = 'black'
         if self.oldX and self.oldY:
             self.c.create_line(self.oldX, self.oldY, event.x, event.y,
                                width=self.lineWidth, fill='red',
